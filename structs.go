@@ -74,16 +74,16 @@ type SendSMSResponseMessage struct {
 }
 
 type CreateCallRequest struct {
-	To               []interface{} `json:"to"`
-	From             interface{}   `json:"from"`
-	Ncoo             []string      `json:"ncoo"`
-	AnswerURL        []string      `json:"answer_url"`
-	AnswerMethod     string        `json:"answer_method,omitempty"`
-	EventURL         []string      `json:"event_url,omitempty"`
-	EventMethod      string        `json:"event_method,omitempty"`
-	MachineDetection string        `json:"machine_detection,omitempty"`
-	LengthTimer      int64         `json:"length_timer,omitempty"`
-	RingingTimer     int64         `json:"ringing_timer,omitempty"`
+	To               []interface{}       `json:"to"`
+	From             interface{}         `json:"from"`
+	Ncoo             []map[string]string `json:"ncoo"`
+	AnswerURL        []string            `json:"answer_url"`
+	AnswerMethod     string              `json:"answer_method,omitempty"`
+	EventURL         []string            `json:"event_url,omitempty"`
+	EventMethod      string              `json:"event_method,omitempty"`
+	MachineDetection string              `json:"machine_detection,omitempty"`
+	LengthTimer      int64               `json:"length_timer,omitempty"`
+	RingingTimer     int64               `json:"ringing_timer,omitempty"`
 }
 
 type CreateCallResponse struct {
