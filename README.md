@@ -1,8 +1,8 @@
 # Nexmo Client Library For Go
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/nexmo-community/nexmo-go)](https://goreportcard.com/report/github.com/nexmo-community/nexmo-go)
-[![Build Status](https://travis-ci.org/nexmo-community/nexmo-go.svg?branch=master)](https://travis-ci.org/nexmo-community/nexmo-go)
-[![Coverage](https://codecov.io/gh/nexmo-community/nexmo-go/branch/master/graph/badge.svg)](https://codecov.io/gh/nexmo-community/nexmo-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/fabriziomanunta/nexmo-go)](https://goreportcard.com/report/github.com/fabriziomanunta/nexmo-go)
+[![Build Status](https://travis-ci.org/fabriziomanunta/nexmo-go.svg?branch=master)](https://travis-ci.org/fabriziomanunta/nexmo-go)
+[![Coverage](https://codecov.io/gh/fabriziomanunta/nexmo-go/branch/master/graph/badge.svg)](https://codecov.io/gh/fabriziomanunta/nexmo-go)
 
 
 This library is moving towards a full client implementation of the
@@ -29,7 +29,7 @@ Current API Coverage can be found in [this spreadsheet](https://docs.google.com/
 To install the package, use `go get`:
 
 ```
-go get github.com/nexmo-community/nexmo-go
+go get github.com/fabriziomanunta/nexmo-go
 ```
 
 Or import the package into your project and then do `go get .`.
@@ -47,7 +47,7 @@ import (
 
 	"log"
 
-	"github.com/nexmo-community/nexmo-go"
+	"github.com/fabriziomanunta/nexmo-go"
 )
 
 func main() {

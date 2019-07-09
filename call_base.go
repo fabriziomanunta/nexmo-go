@@ -1,6 +1,6 @@
 package nexmo
 
-import "github.com/nexmo-community/nexmo-go/sling"
+import "github.com/fabriziomanunta/nexmo-go/sling"
 
 type CallService struct {
 	sling   *sling.Sling

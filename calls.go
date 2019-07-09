@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/nexmo-community/nexmo-go/sling"
+	"github.com/fabriziomanunta/nexmo-go/sling"
 )
 
 func (c *CallErrorResponse) Error() string {

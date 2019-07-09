@@ -1,4 +1,4 @@
-module github.com/nexmo-community/nexmo-go
+module github.com/fabriziomanunta/nexmo-go
 
 go 1.12
 
