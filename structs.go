@@ -76,6 +76,7 @@ type SendSMSResponseMessage struct {
 type CreateCallRequest struct {
 	To               []interface{} `json:"to"`
 	From             interface{}   `json:"from"`
+	Ncoo             []string      `json:"ncoo"`
 	AnswerURL        []string      `json:"answer_url"`
 	AnswerMethod     string        `json:"answer_method,omitempty"`
 	EventURL         []string      `json:"event_url,omitempty"`
