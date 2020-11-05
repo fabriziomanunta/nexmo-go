@@ -15,12 +15,13 @@ type Client struct {
 	Verify      *VerifyService
 	Developer   *DeveloperService
 	Application *ApplicationService
+	Report      *ReportService
 }
 
 func NewClient(httpClient *http.Client, authSet *AuthSet) *Client {
 	base := sling.New().
 		Client(httpClient).
-		Set("User-Agent", "nexmo-go/2.0 (fabriziomanunta)")
+		Set("User-Agent", "nexmo-go/2.0 (nexmo)")
 	return &Client{
 		sling:       base,
 		Insight:     newInsightService(base.New(), authSet),
@@ -29,6 +30,7 @@ func NewClient(httpClient *http.Client, authSet *AuthSet) *Client {
 		Verify:      newVerifyService(base.New(), authSet),
 		Developer:   newDeveloperService(base.New(), authSet),
 		Application: newApplicationService(base.New(), authSet),
+		Report:      newReportService(base.New(), authSet),
 	}
 }
 

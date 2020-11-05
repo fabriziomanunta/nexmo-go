@@ -179,3 +179,86 @@ type GetPhoneOutboundPricingResponse struct {
 	CountryCode string `json:"country-code,omitempty"`
 	Price       string `json:"price,omitempty"`
 }
+
+// Reports api
+type ReportRecordResponse interface {
+	GetAccountId() string
+}
+
+type CallRecordResponse struct {
+	AccountID         string `json:"account_id"`
+	CallID            string `json:"call_id"`
+	Direction         string `json:"direction"`
+	From              string `json:"from"`
+	To                string `json:"to"`
+	Network           string `json:"network"`
+	NetworkName       string `json:"network_name"`
+	Country           string `json:"country"`
+	CountryName       string `json:"country_name"`
+	DateStart         string `json:"date_start"`
+	DateEnd           string `json:"date_end"`
+	Duration          string `json:"duration"`
+	Status            string `json:"status"`
+	StatusDescription string `json:"status_description"`
+	Currency          string `json:"currency"`
+	Price             string `json:"price"`
+	TotalPrice        string `json:"total_price"`
+}
+
+func (r *CallRecordResponse) GetAccountId() string { return r.AccountID }
+
+type SMSRecordResponse struct {
+	AccountID            string `json:"account_id"`
+	MessageID            string `json:"message_id"`
+	ClientRef            string `json:"client_ref"`
+	Direction            string `json:"direction"`
+	From                 string `json:"from"`
+	To                   string `json:"to"`
+	Network              string `json:"network"`
+	NetworkName          string `json:"network_name"`
+	Country              string `json:"country"`
+	CountryName          string `json:"country_name"`
+	DateReceived         string `json:"date_received"`
+	DateFinalized        string `json:"date_finalized"`
+	Latency              string `json:"latency"`
+	Status               string `json:"status"`
+	ErrorCode            string `json:"error_code"`
+	ErrorCodeDescription string `json:"error_code_description"`
+	Currency             string `json:"currency"`
+	TotalPrice           string `json:"total_price"`
+	MessageBody          string `json:"message_body"`
+}
+
+func (r *SMSRecordResponse) GetAccountId() string { return r.AccountID }
+
+type LoadRecordsRequest struct {
+	AccountID      string `json:"account_id"`
+	ID             string `json:"id"`        // The UUID of the message or call to be searched for.
+	Product        string `json:"product"`   // Must be one of: SMS, VOICE-CALL, WEBSOCKET-CALL, VERIFY-API, NUMBER-INSIGHT, MESSAGES, CONVERSATIONS or ASR
+	Direction      string `json:"direction"` // Must be one of: inbound or outbound
+	DateStart      string `json:"date_start"`
+	DateEnd        string `json:"date_end"`
+	IncludeMessage bool   `json:"include_message"`
+	Type           string `json:"type"`
+	Status         string `json:"status"` // Must be one of: delivered, expired, failed, rejected, accepted, buffered, unknown or deleted
+}
+
+type LoadRecordsResponse struct {
+	Links          Links                  `json:"_links,omitempty"`
+	RequestID      string                 `json:"request_id"`
+	RequestStatus  string                 `json:"request_status"`
+	ReceivedAt     string                 `json:"received_at"`
+	Price          string                 `json:"price"`
+	Currency       string                 `json:"currency"`
+	AccountID      string                 `json:"account_id"`
+	Product        string                 `json:"product"`
+	Direction      string                 `json:"direction"`
+	IncludeMessage string                 `json:"include_message"`
+	ItemsCount     int                    `json:"items_count"`
+	Records        []ReportRecordResponse `json:"records"`
+}
+
+type ReportErrorResponse struct {
+	Type       string `json:"type,omitempty"`
+	ErrorTitle string `json:"error_title,omitempty"`
+}
