@@ -183,6 +183,7 @@ type GetPhoneOutboundPricingResponse struct {
 // Reports api
 type ReportRecordResponse interface {
 	GetAccountId() string
+	GetPrice() string
 }
 
 type CallRecordResponse struct {
