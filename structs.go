@@ -206,6 +206,7 @@ type CallRecordResponse struct {
 }
 
 func (r *CallRecordResponse) GetAccountId() string { return r.AccountID }
+func (r *CallRecordResponse) GetPrice() string     { return r.Price }
 
 type SMSRecordResponse struct {
 	AccountID            string `json:"account_id"`
@@ -230,6 +231,7 @@ type SMSRecordResponse struct {
 }
 
 func (r *SMSRecordResponse) GetAccountId() string { return r.AccountID }
+func (r *SMSRecordResponse) GetPrice() string     { return r.TotalPrice }
 
 type LoadRecordsRequest struct {
 	AccountID      string `json:"account_id"`
