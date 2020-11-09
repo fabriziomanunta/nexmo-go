@@ -13,7 +13,7 @@ func (c *ReportErrorResponse) Error() string {
 
 // Load Records gets the list of records with the given search criterias
 func (c *ReportService) LoadRecords(request LoadRecordsRequest) (*LoadRecordsResponse, *http.Response, error) {
-	sling := c.sling.New().Get("records").BodyJSON(request)
+	sling := c.sling.New().Get("records").QueryStruct(request)
 
 	reportResponse := new(LoadRecordsResponse)
 	httpResponse, err := c.makeRequest(sling, reportResponse)
