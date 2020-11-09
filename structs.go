@@ -184,6 +184,7 @@ type GetPhoneOutboundPricingResponse struct {
 type ReportRecordResponse interface {
 	GetAccountId() string
 	GetPrice() string
+	GetId() string
 }
 
 type CallRecordResponse struct {
@@ -208,6 +209,7 @@ type CallRecordResponse struct {
 
 func (r *CallRecordResponse) GetAccountId() string { return r.AccountID }
 func (r *CallRecordResponse) GetPrice() string     { return r.Price }
+func (r *CallRecordResponse) GetId() string        { return r.CallID }
 
 type SMSRecordResponse struct {
 	AccountID            string `json:"account_id"`
@@ -233,6 +235,7 @@ type SMSRecordResponse struct {
 
 func (r *SMSRecordResponse) GetAccountId() string { return r.AccountID }
 func (r *SMSRecordResponse) GetPrice() string     { return r.TotalPrice }
+func (r *SMSRecordResponse) GetId() string        { return r.MessageID }
 
 type LoadRecordsRequest struct {
 	AccountID      string `json:"account_id"`
